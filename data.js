@@ -48,16 +48,16 @@ const PORTFOLIO_DATA = {
 
   /* ── SERVICES ─────────────────────────────────────────── */
   services: [
-    { icon: "⌨️", titleEn: "Manual Data Entry",           titleAr: "إدخال البيانات يدويًا",           descEn: "Accurate typing from any source into your system, spreadsheet, or database.",                                                          descAr: "كتابة دقيقة من أي مصدر إلى نظامك أو جدول البيانات أو قاعدة البيانات." },
-    { icon: "📄", titleEn: "PDF / Scan / Image Entry",     titleAr: "إدخال بيانات PDF والصور",          descEn: "Extract and type data from scanned documents, PDFs, images, and handwritten forms.",                                                   descAr: "استخراج وكتابة البيانات من المستندات الممسوحة ضوئيًا وملفات PDF والصور والنماذج المكتوبة بخط اليد." },
-    { icon: "📊", titleEn: "Excel & Sheets Cleaning",      titleAr: "تنظيف وتنسيق Excel وSheets",       descEn: "Remove duplicates, fix inconsistencies, apply formatting, formulas, and pivot tables.",                                                 descAr: "إزالة التكرارات وإصلاح التناقضات وتطبيق التنسيق والصيغ والجداول المحورية." },
-    { icon: "🗄️", titleEn: "Database Entry",               titleAr: "إدخال قواعد البيانات",             descEn: "Populate CRMs, ERPs, Airtable, Notion, Google Forms, or any custom system accurately.",                                              descAr: "ملء أنظمة CRM وERP وAirtable وNotion وGoogle Forms أو أي نظام مخصص بدقة." },
-    { icon: "🔍", titleEn: "Web Research & Copy-Paste",    titleAr: "البحث على الويب والنسخ واللصق",    descEn: "Collect, organize, and enter data from websites, directories, and online sources.",                                                    descAr: "جمع البيانات وتنظيمها وإدخالها من المواقع الإلكترونية والأدلة والمصادر عبر الإنترنت." },
-    { icon: "📝", titleEn: "Document & Form Processing",   titleAr: "معالجة المستندات والنماذج",        descEn: "Process and organize paperwork, applications, surveys, and administrative forms.",                                                     descAr: "معالجة وتنظيم الأوراق والطلبات والاستطلاعات والنماذج الإدارية." },
-    { icon: "🎙️", titleEn: "Transcription (AR/EN)",        titleAr: "التفريغ النصي (عربي/إنجليزي)",     descEn: "Transcribe audio, video, or handwritten content in Arabic and English accurately.",                                                     descAr: "تفريغ المحتوى الصوتي أو المرئي أو المكتوب بخط اليد باللغتين العربية والإنجليزية بدقة." },
-    { icon: "📑", titleEn: "Word & PowerPoint Formatting", titleAr: "تنسيق Word وPowerPoint",            descEn: "Professional formatting of reports, CVs, presentations, and documents to a consistent standard.",                                      descAr: "التنسيق الاحترافي للتقارير والسيرة الذاتية والعروض التقديمية والمستندات وفق معايير متسقة." },
-    { icon: "✅", titleEn: "Data Verification & QC",       titleAr: "التحقق من البيانات ومراقبة الجودة", descEn: "Cross-check, validate, and clean datasets to eliminate errors and ensure consistency.",                                                descAr: "التدقيق والتحقق من مجموعات البيانات وتنظيفها للقضاء على الأخطاء وضمان الاتساق." },
-    { icon: "🏥", titleEn: "Medical & Academic Data Entry", titleAr: "إدخال البيانات الطبية والأكاديمية", descEn: "Handle sensitive patient records, research data, and academic information with strict confidentiality.",                                descAr: "التعامل مع سجلات المرضى وبيانات البحث والمعلومات الأكاديمية بسرية تامة." },
+    { icon: "keyboard",   titleEn: "Manual Data Entry",           titleAr: "إدخال البيانات يدويًا",           descEn: "Accurate typing from any source into your system, spreadsheet, or database.",                                                          descAr: "كتابة دقيقة من أي مصدر إلى نظامك أو جدول البيانات أو قاعدة البيانات." },
+    { icon: "scan-pdf",   titleEn: "PDF / Scan / Image Entry",     titleAr: "إدخال بيانات PDF والصور",          descEn: "Extract and type data from scanned documents, PDFs, images, and handwritten forms.",                                                   descAr: "استخراج وكتابة البيانات من المستندات الممسوحة ضوئيًا وملفات PDF والصور والنماذج المكتوبة بخط اليد." },
+    { icon: "spreadsheet",titleEn: "Excel & Sheets Cleaning",      titleAr: "تنظيف وتنسيق Excel وSheets",       descEn: "Remove duplicates, fix inconsistencies, apply formatting, formulas, and pivot tables.",                                                 descAr: "إزالة التكرارات وإصلاح التناقضات وتطبيق التنسيق والصيغ والجداول المحورية." },
+    { icon: "database",   titleEn: "Database Entry",               titleAr: "إدخال قواعد البيانات",             descEn: "Populate CRMs, ERPs, Airtable, Notion, Google Forms, or any custom system accurately.",                                              descAr: "ملء أنظمة CRM وERP وAirtable وNotion وGoogle Forms أو أي نظام مخصص بدقة." },
+    { icon: "search-web", titleEn: "Web Research & Copy-Paste",    titleAr: "البحث على الويب والنسخ واللصق",    descEn: "Collect, organize, and enter data from websites, directories, and online sources.",                                                    descAr: "جمع البيانات وتنظيمها وإدخالها من المواقع الإلكترونية والأدلة والمصادر عبر الإنترنت." },
+    { icon: "clipboard",  titleEn: "Document & Form Processing",   titleAr: "معالجة المستندات والنماذج",        descEn: "Process and organize paperwork, applications, surveys, and administrative forms.",                                                     descAr: "معالجة وتنظيم الأوراق والطلبات والاستطلاعات والنماذج الإدارية." },
+    { icon: "microphone", titleEn: "Transcription (AR/EN)",        titleAr: "التفريغ النصي (عربي/إنجليزي)",     descEn: "Transcribe audio, video, or handwritten content in Arabic and English accurately.",                                                     descAr: "تفريغ المحتوى الصوتي أو المرئي أو المكتوب بخط اليد باللغتين العربية والإنجليزية بدقة." },
+    { icon: "format-doc", titleEn: "Word & PowerPoint Formatting", titleAr: "تنسيق Word وPowerPoint",            descEn: "Professional formatting of reports, CVs, presentations, and documents to a consistent standard.",                                      descAr: "التنسيق الاحترافي للتقارير والسيرة الذاتية والعروض التقديمية والمستندات وفق معايير متسقة." },
+    { icon: "shield-check",titleEn: "Data Verification & QC",       titleAr: "التحقق من البيانات ومراقبة الجودة", descEn: "Cross-check, validate, and clean datasets to eliminate errors and ensure consistency.",                                                descAr: "التدقيق والتحقق من مجموعات البيانات وتنظيفها للقضاء على الأخطاء وضمان الاتساق." },
+    { icon: "medical-plus",titleEn: "Medical & Academic Data Entry", titleAr: "إدخال البيانات الطبية والأكاديمية", descEn: "Handle sensitive patient records, research data, and academic information with strict confidentiality.",                                descAr: "التعامل مع سجلات المرضى وبيانات البحث والمعلومات الأكاديمية بسرية تامة." },
   ],
 
   /* ── SKILLS ───────────────────────────────────────────── */
@@ -93,23 +93,25 @@ const PORTFOLIO_DATA = {
     ]},
   ],
 
-  /* ── TOOLS ────────────────────────────────────────────── */
+  /* ── TOOLS ─────────────────────────────────────────────
+     slug → Simple Icons CDN: https://cdn.simpleicons.org/{slug}
+  ──────────────────────────────────────────────────────── */
   tools: [
-    { icon: "📊", name: "Excel",           nameAr: "إكسل" },
-    { icon: "📋", name: "Google Sheets",   nameAr: "جوجل شيتس" },
-    { icon: "📝", name: "Word",            nameAr: "وورد" },
-    { icon: "📽️", name: "PowerPoint",      nameAr: "بوربوينت" },
-    { icon: "📬", name: "Google Forms",    nameAr: "جوجل فورمز" },
-    { icon: "🗃️", name: "Airtable",        nameAr: "إيرتيبل" },
-    { icon: "📓", name: "Notion",          nameAr: "نوشن" },
-    { icon: "🔡", name: "OCR Tools",       nameAr: "أدوات OCR" },
-    { icon: "📎", name: "PDF Tools",       nameAr: "أدوات PDF" },
-    { icon: "🤖", name: "ChatGPT / Claude",nameAr: "ChatGPT / Claude" },
-    { icon: "☁️", name: "Google Drive",    nameAr: "جوجل درايف" },
-    { icon: "💾", name: "OneDrive",        nameAr: "ون درايف" },
-    { icon: "📧", name: "Gmail",           nameAr: "جيميل" },
-    { icon: "🔍", name: "WPS Office",      nameAr: "WPS أوفيس" },
-    { icon: "🧹", name: "Power Query",     nameAr: "باور كويري" },
+    { slug: "microsoftexcel",       name: "Microsoft Excel",     nameAr: "مايكروسوفت إكسل"    },
+    { slug: "googlesheets",         name: "Google Sheets",       nameAr: "جوجل شيتس"           },
+    { slug: "microsoftword",        name: "Microsoft Word",      nameAr: "مايكروسوفت وورد"     },
+    { slug: "microsoftpowerpoint",  name: "PowerPoint",          nameAr: "بوربوينت"             },
+    { slug: "microsoftoutlook",     name: "Microsoft Outlook",   nameAr: "مايكروسوفت أوتلوك"  },
+    { slug: "googleforms",          name: "Google Forms",        nameAr: "جوجل فورمز"          },
+    { slug: "googledrive",          name: "Google Drive",        nameAr: "جوجل درايف"          },
+    { slug: "microsoftonedrive",    name: "OneDrive",            nameAr: "ون درايف"            },
+    { slug: "gmail",                name: "Gmail",               nameAr: "جيميل"               },
+    { slug: "adobeacrobatreader",   name: "Adobe Acrobat PDF",   nameAr: "أدوبي PDF"           },
+    { slug: "airtable",             name: "Airtable",            nameAr: "إيرتيبل"             },
+    { slug: "notion",               name: "Notion",              nameAr: "نوشن"                },
+    { slug: "openai",               name: "ChatGPT / AI",        nameAr: "ChatGPT / ذكاء اصطناعي" },
+    { slug: "microsoftpowerbi",     name: "Power Query",         nameAr: "باور كويري"          },
+    { slug: "wps",                  name: "WPS Office",          nameAr: "WPS أوفيس"           },
   ],
 
   /* ── EXPERIENCE ───────────────────────────────────────── */

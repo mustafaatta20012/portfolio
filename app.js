@@ -270,6 +270,23 @@ function showFormMsg(type, msg) {
                    type === 'error'   ? '#dc2626' : '#0d9488';
 }
 
+/* ── SERVICE ICONS (inline SVG — domain-specific) ─────────── */
+const SERVICE_ICONS = {
+  'keyboard':    `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="13" rx="2.5"/><path d="M6 11.5h.01M9.5 11.5h.01M13 11.5h.01M16.5 11.5h.01M20 11.5h.01M6 15h12"/></svg>`,
+  'scan-pdf':    `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 2v6h6"/><path d="M12 18v-6M9.5 15.5l2.5 2.5 2.5-2.5"/></svg>`,
+  'spreadsheet': `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>`,
+  'database':    `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.657-4.03 3-9 3S3 13.657 3 12"/><path d="M3 5v14c0 1.657 4.03 3 9 3s9-1.343 9-3V5"/></svg>`,
+  'search-web':  `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>`,
+  'clipboard':   `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>`,
+  'microphone':  `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3M8 22h8"/></svg>`,
+  'format-doc':  `<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>`,
+  'shield-check':`<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`,
+  'medical-plus':`<svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></svg>`,
+};
+function getServiceIcon(key) {
+  return SERVICE_ICONS[key] || `<span class="service-svg-fallback" aria-hidden="true">${key}</span>`;
+}
+
 /* ── RENDER FROM DATA.JS ───────────────────────────────────── */
 
 function renderServices(container) {
@@ -277,7 +294,7 @@ function renderServices(container) {
   const { services } = PORTFOLIO_DATA;
   container.innerHTML = services.map((s, i) => `
     <div class="service-card reveal reveal-delay-${(i % 4) + 1}" data-category="${s.category || 'general'}">
-      <span class="service-icon" aria-hidden="true">${s.icon}</span>
+      <div class="service-icon-wrap" aria-hidden="true">${getServiceIcon(s.icon)}</div>
       <h3 class="service-title">
         <span data-en="${s.titleEn}" data-ar="${s.titleAr}">${s.titleEn}</span>
       </h3>
@@ -318,7 +335,16 @@ function renderTools(container) {
   const { tools } = PORTFOLIO_DATA;
   container.innerHTML = tools.map((t, i) => `
     <div class="tool-card reveal reveal-delay-${(i % 5) + 1}">
-      <div class="tool-icon" aria-hidden="true">${t.icon}</div>
+      <div class="tool-icon-wrap" aria-hidden="true">
+        <img
+          src="https://cdn.simpleicons.org/${t.slug}"
+          class="brand-icon"
+          alt="${t.name}"
+          loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+        <span class="brand-icon-fallback" style="display:none;">${t.name.charAt(0)}</span>
+      </div>
       <div class="tool-name">
         <span data-en="${t.name}" data-ar="${t.nameAr}">${t.name}</span>
       </div>
