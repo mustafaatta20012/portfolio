@@ -1,637 +1,341 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mustafa Abu El-Ata | MIS Developer & Digital Specialist</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<style>
-:root {
-  --ink: #0d0d0d;
-  --paper: #f5f0e8;
-  --cream: #ede8dc;
-  --rust: #c0392b;
-  --rust-dark: #96281b;
-  --gold: #b8860b;
-  --steel: #2c3e50;
-  --muted: #6b6560;
-  --border: #d4cfc6;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustafa Abu El-Ata | Data Entry Specialist — Accurate, Fast, Confidential</title>
+  <meta name="description" content="Professional data entry specialist offering accurate, fast, and confidential data entry, Excel data cleaning, transcription, and document formatting in Arabic and English.">
+  <meta name="keywords" content="data entry, data entry specialist, Excel data entry, data cleaning, typing, transcription, document formatting, إدخال بيانات, مدخل بيانات, تفريغ نصوص, تنسيق إكسل, عمل حر">
+  <meta name="author" content="Mustafa Abu El-Ata">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mustafaatta20012.github.io/portfolio/">
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); cursor: none; }
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://mustafaatta20012.github.io/portfolio/">
+  <meta property="og:title"       content="Mustafa Abu El-Ata | Data Entry Specialist">
+  <meta property="og:description" content="Accurate, fast, and confidential data entry, Excel data cleaning, transcription, and document formatting.">
+  <meta property="og:image"       content="https://mustafaatta20012.github.io/portfolio/assets/og-image.png">
 
-/* CURSOR */
-.cursor { position: fixed; width: 10px; height: 10px; background: var(--rust); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.1s; mix-blend-mode: multiply; }
-.cursor-ring { position: fixed; width: 36px; height: 36px; border: 1.5px solid var(--rust); border-radius: 50%; pointer-events: none; z-index: 9998; transition: all 0.15s ease; mix-blend-mode: multiply; }
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Mustafa Abu El-Ata | Data Entry Specialist">
+  <meta name="twitter:description" content="Accurate, fast, and confidential data entry services.">
+  <meta name="twitter:image"       content="https://mustafaatta20012.github.io/portfolio/assets/og-image.png">
 
-/* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2.5rem; background: rgba(245,240,232,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
-.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 3px; color: var(--ink); text-decoration: none; }
-.nav-logo span { color: var(--rust); }
-.nav-links a { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--rust); }
-.btn-nav { background: var(--ink); color: var(--paper) !important; padding: 0.45rem 1.2rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: none; transition: background 0.2s; text-decoration: none; }
-.btn-nav:hover { background: var(--rust); }
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mustafa Abu El-Ata",
+    "jobTitle": "Data Entry Specialist",
+    "description": "Professional data entry specialist offering accurate, fast, and confidential data entry services in Arabic and English.",
+    "url": "https://mustafaatta20012.github.io/portfolio/",
+    "sameAs": [
+      "https://www.linkedin.com/in/mustafa-atta-mis/",
+      "https://khamsat.com/user/mustafa20222atta",
+      "https://mostaql.com/u/Mustafa20222"
+    ],
+    "knowsLanguage": ["Arabic", "English"],
+    "offers": {
+      "@type": "Service",
+      "name": "Data Entry Services",
+      "description": "Manual data entry, Excel data cleaning, transcription, document formatting, database entry."
+    }
+  }
+  </script>
 
-/* HERO */
-.hero { min-height: 100vh; padding-top: 70px; border-bottom: 1px solid var(--border); }
-.hero-left { padding: 5rem 3rem 4rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 70px); }
-.hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rust); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
-.hero-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--rust); }
-.hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.9; letter-spacing: 2px; margin-bottom: 1.5rem; animation: fadeUp 0.6s 0.2s both; }
-.hero-name .last { display: block; color: var(--rust); }
-.hero-subtitle { font-size: 1rem; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 440px; margin-bottom: 2.5rem; border-left: 3px solid var(--rust); padding-left: 1rem; }
-.hero-tag { padding: 0.3rem 0.85rem; border: 1px solid var(--border); font-size: 0.68rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--steel); background: var(--cream); }
-.hero-tag.active { background: var(--rust); color: #fff; border-color: var(--rust); }
-.btn-prim { background: var(--ink); color: var(--paper); padding: 0.85rem 2rem; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: none; transition: background 0.2s; text-decoration: none; display: inline-block; }
-.btn-prim:hover { background: var(--rust); color: var(--paper); }
-.btn-ghost { background: transparent; color: var(--ink); padding: 0.85rem 2rem; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: 2px solid var(--ink); cursor: none; transition: all 0.2s; text-decoration: none; display: inline-block; }
-.btn-ghost:hover { border-color: var(--rust); color: var(--rust); }
-
-.hero-right { padding: 5rem 2.5rem 4rem; display: flex; flex-direction: column; justify-content: space-between; min-height: calc(100vh - 70px); }
-.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.stat-box { background: var(--paper); padding: 2rem 1.5rem; transition: background 0.2s; }
-.stat-box:hover { background: var(--cream); }
-.stat-big { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--rust); line-height: 1; }
-.stat-desc { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-top: 0.3rem; }
-.scroll-hint { display: flex; align-items: center; gap: 1rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
-.scroll-line { width: 60px; height: 1px; background: var(--border); }
-
-/* SECTIONS */
-.sec-wrap { padding: 5rem 0; border-top: 1px solid var(--border); }
-.sec-wrap.bg-cream { background: var(--cream); }
-.sec-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
-.sec-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--rust); letter-spacing: 2px; }
-.sec-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; letter-spacing: 3px; }
-.sec-sub { font-size: 0.78rem; color: var(--muted); margin-left: auto; text-transform: uppercase; letter-spacing: 2px; }
-
-/* EDU */
-.edu-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.edu-card { background: var(--paper); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
-.edu-card:hover { background: var(--cream); }
-.edu-badge { position: absolute; top: 0; right: 0; padding: 0.4rem 1rem; font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
-.badge-red { background: var(--rust); color: #fff; }
-.badge-steel { background: var(--steel); color: #fff; }
-.badge-gold { background: var(--gold); color: #fff; }
-.edu-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-.edu-deg { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; margin-bottom: 0.3rem; }
-.edu-field { color: var(--rust); font-weight: 700; font-size: 0.88rem; margin-bottom: 0.4rem; }
-.edu-info { font-size: 0.78rem; color: var(--muted); }
-
-/* SKILLS */
-.skill-group-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 3px; color: var(--muted); margin-bottom: 1.5rem; }
-.skill-item { margin-bottom: 1.4rem; }
-.skill-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.45rem; }
-.skill-label { font-size: 0.84rem; font-weight: 500; }
-.skill-pct { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--rust); }
-.skill-track { height: 2px; background: var(--border); position: relative; }
-.skill-fill { height: 100%; background: var(--rust); position: relative; }
-.skill-fill::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: var(--rust); border-radius: 50%; }
-
-/* EXPERIENCE */
-.exp-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.exp-row { background: var(--paper); padding: 2rem 2.5rem; transition: background 0.2s; }
-.exp-row:hover { background: var(--cream); }
-.exp-role { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 2px; }
-.exp-company { color: var(--rust); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem; }
-.exp-period { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 2px; }
-.exp-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-top: 0.7rem; max-width: 700px; }
-.exp-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.8rem; }
-.exp-tag { font-size: 0.63rem; padding: 0.2rem 0.6rem; background: var(--cream); border: 1px solid var(--border); font-family: 'DM Mono', monospace; letter-spacing: 1px; }
-
-/* PROJECTS */
-.projects-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.project-row { background: var(--paper); display: grid; grid-template-columns: 70px 1fr auto; align-items: center; gap: 2rem; padding: 2rem 2.5rem; transition: background 0.2s; cursor: none; text-decoration: none; color: inherit; }
-.project-row:hover { background: var(--cream); }
-.project-num { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); }
-.project-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 0.3rem; }
-.project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-.chip { font-size: 0.62rem; padding: 0.2rem 0.6rem; background: var(--cream); border: 1px solid var(--border); font-family: 'DM Mono', monospace; letter-spacing: 1px; }
-.chip.live { background: var(--rust); color: #fff; border-color: var(--rust); }
-.chip.new { background: var(--steel); color: #fff; border-color: var(--steel); }
-.project-arrow { font-size: 1.2rem; color: var(--border); transition: color 0.2s; }
-.project-row:hover .project-arrow { color: var(--rust); }
-
-/* PLATFORMS */
-.platforms-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.platform-item { background: var(--paper); padding: 2rem; text-align: center; text-decoration: none; transition: background 0.2s; display: block; }
-.platform-item:hover { background: var(--rust); }
-.platform-item:hover .platform-name, .platform-item:hover .platform-handle, .platform-item:hover .platform-tag { color: #fff; }
-.platform-emoji { font-size: 1.8rem; display: block; margin-bottom: 0.8rem; }
-.platform-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 2px; display: block; color: var(--ink); transition: color 0.2s; }
-.platform-handle { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--rust); display: block; margin: 0.2rem 0; transition: color 0.2s; }
-.platform-tag { font-size: 0.63rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); transition: color 0.2s; }
-.platform-item.linkedin-item:hover { background: #0077b5; }
-
-/* CONTACT */
-.contact-left { background: var(--ink); color: var(--paper); padding: 4rem 3rem; }
-.contact-left h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 3px; line-height: 1; margin-bottom: 1rem; }
-.contact-left h2 span { color: var(--rust); }
-.contact-left p { font-size: 0.88rem; color: #aaa; line-height: 1.8; margin-bottom: 2rem; }
-.avail-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.07); border: 1px solid #333; padding: 0.4rem 1rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.avail-dot { width: 7px; height: 7px; background: #27ae60; border-radius: 50%; animation: blink 1.5s infinite; flex-shrink: 0; }
-.contact-right { background: var(--paper); padding: 4rem 3rem; }
-.contact-field { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
-.contact-key { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
-.contact-val { font-size: 0.95rem; font-weight: 500; }
-.contact-val a { color: var(--rust); text-decoration: none; }
-.contact-val a:hover { text-decoration: underline; }
-
-footer { background: var(--ink); color: var(--paper); padding: 2rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 2px; }
-footer span.accent { color: var(--rust); }
-.footer-socials a { color: #aaa; text-decoration: none; font-size: 0.68rem; letter-spacing: 2px; transition: color 0.2s; }
-.footer-socials a:hover { color: var(--rust); }
-
-/* ANIMATIONS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-.fade-up { animation: fadeUp 0.6s both; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-
-/* RESPONSIVE */
-@media (max-width: 1199px) {
-  .platforms-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 991px) {
-  .hero-left { border-right: none; border-bottom: 1px solid var(--border); min-height: auto; padding: 4rem 1.5rem; }
-  .hero-right { min-height: auto; padding: 3rem 1.5rem; }
-  .edu-grid { grid-template-columns: 1fr; }
-  .platforms-grid { grid-template-columns: 1fr 1fr; }
-  .contact-left, .contact-right { padding: 3rem 2rem; }
-}
-@media (max-width: 576px) {
-  .platforms-grid { grid-template-columns: 1fr; }
-  .project-row { grid-template-columns: 50px 1fr auto; gap: 1rem; padding: 1.5rem; }
-  .sec-sub { display: none; }
-  nav { padding: 1rem 1.2rem; }
-}
-</style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<!-- ══════════════════════════════════════
+     NAVBAR (shared across all pages)
+════════════════════════════════════════ -->
+<header>
+  <nav id="navbar" class="navbar" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Home">
+      M<span class="nav-logo-dot">.</span>ABU EL-ATA
+    </a>
 
-<!-- NAV -->
-<nav>
-  <div class="container-fluid px-0">
-    <div class="d-flex justify-content-between align-items-center">
-      <a href="#" class="nav-logo">M<span>.</span>ABUELATA</a>
-      <div class="d-none d-lg-flex nav-links gap-4">
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#platforms">Platforms</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a href="#contact" class="btn-nav">Hire Me</a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"      class="nav-link" data-page="index.html"      data-en="Home"       data-ar="الرئيسية">Home</a></li>
+      <li><a href="services.html"   class="nav-link" data-page="services.html"   data-en="Services"   data-ar="الخدمات">Services</a></li>
+      <li><a href="experience.html" class="nav-link" data-page="experience.html" data-en="Experience"  data-ar="الخبرة">Experience</a></li>
+      <li><a href="portfolio.html"  class="nav-link" data-page="portfolio.html"  data-en="Portfolio"  data-ar="أعمالي">Portfolio</a></li>
+      <li><a href="contact.html"    class="nav-link" data-page="contact.html"    data-en="Contact"    data-ar="تواصل">Contact</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <!-- Dark / Light toggle -->
+      <button class="nav-btn-icon" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span data-theme-icon>🌙</span>
+      </button>
+      <!-- Language toggle -->
+      <button class="nav-btn-icon nav-lang-badge" data-lang-toggle data-lang-btn aria-label="Switch language">عر</button>
+      <!-- CTA -->
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta" data-en="Hire Me" data-ar="وظّفني">Hire Me</a>
     </div>
-  </div>
-</nav>
 
-<!-- HERO -->
-<section class="hero" id="about">
-  <div class="container-fluid px-0">
-    <div class="row g-0">
-      <div class="col-lg-7 hero-left">
-        <div class="hero-eyebrow fade-up delay-1">Available for Freelance Worldwide</div>
-        <h1 class="hero-name fade-up delay-2">
-          Mustafa<span class="last">Abu El-Ata</span>
-        </h1>
-        <p class="hero-subtitle fade-up delay-3">
-          MIS Graduate · Full-Stack Web Developer · Data Analyst · Content Strategist · SEO Specialist — Building digital solutions with academic excellence and proven real-world impact.
+    <button id="nav-hamburger" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <nav id="nav-mobile" class="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html"      data-en="Home"       data-ar="الرئيسية">Home</a>
+    <a href="services.html"   data-en="Services"   data-ar="الخدمات">Services</a>
+    <a href="experience.html" data-en="Experience"  data-ar="الخبرة">Experience</a>
+    <a href="portfolio.html"  data-en="Portfolio"  data-ar="أعمالي">Portfolio</a>
+    <a href="contact.html"    data-en="Contact"    data-ar="تواصل">Contact</a>
+    <div style="display:flex;gap:8px;padding:8px 0;border-top:1px solid var(--border);margin-top:8px;">
+      <button class="nav-btn-icon" data-theme-toggle aria-label="Toggle dark mode"><span data-theme-icon>🌙</span></button>
+      <button class="nav-btn-icon nav-lang-badge" data-lang-toggle data-lang-btn aria-label="Switch language">عر</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<main id="main-content">
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" aria-label="Availability status">
+      <span data-en="Available for freelance worldwide" data-ar="متاح للعمل الحر عالميًا">Available for freelance worldwide</span>
+    </div>
+
+    <h1 id="hero-heading" class="hero-name heading-xl">
+      Mustafa<br><span class="accent" data-en="Abu El-Ata" data-ar="أبو العطا">Abu El-Ata</span>
+    </h1>
+
+    <div class="hero-title" role="doc-subtitle">
+      <span data-en="Data Entry Specialist | Accurate · Fast · Confidential" data-ar="متخصص إدخال البيانات | دقيق · سريع · موثوق">
+        Data Entry Specialist | Accurate · Fast · Confidential
+      </span>
+    </div>
+
+    <p class="hero-desc">
+      <span data-en="Delivering error-free data entry, clean spreadsheets, and perfectly formatted documents — on time, every time."
+            data-ar="أُقدّم خدمات إدخال بيانات خالية من الأخطاء، وجداول بيانات منظّمة، ومستندات مُنسّقة باحترافية — في الوقت المحدد دائمًا.">
+        Delivering error-free data entry, clean spreadsheets, and perfectly formatted documents — on time, every time.
+      </span>
+    </p>
+
+    <div class="hero-btns">
+      <a href="contact.html" class="btn btn-primary" data-en="Hire Me" data-ar="وظّفني">
+        ✉ Hire Me
+      </a>
+      <a href="assets/cv.pdf" download class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);" data-en="Download CV" data-ar="تحميل السيرة الذاتية">
+        ⬇ Download CV
+      </a>
+      <a href="portfolio.html" class="btn btn-amber" data-en="View Samples" data-ar="عرض الأعمال">
+        🗂 View Samples
+      </a>
+    </div>
+
+    <!-- Stats (rendered by JS) -->
+    <div id="hero-stats" class="hero-stats" aria-label="Key statistics"></div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="1" y="1" width="14" height="22" rx="7"/>
+      <circle cx="8" cy="7" r="2" fill="currentColor" stroke="none">
+        <animate attributeName="cy" values="7;15;7" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+    <span data-en="Scroll" data-ar="مرر">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════ -->
+<section class="section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge" aria-hidden="true">
+        <span data-en="About Me" data-ar="عن نفسي">About Me</span>
+      </div>
+      <h2 id="about-heading" class="section-title">
+        <span data-en="Who I Am &amp; How I Work" data-ar="من أنا وكيف أعمل">Who I Am &amp; How I Work</span>
+      </h2>
+      <p class="section-desc">
+        <span data-en="Precision-focused, deadline-driven, and always confidential." data-ar="أعمل بدقة عالية والتزام بالمواعيد وسرية تامة.">
+          Precision-focused, deadline-driven, and always confidential.
+        </span>
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Bio -->
+      <div>
+        <p class="about-bio reveal" data-en="I am a dedicated Data Entry Specialist with a strong background in Management Information Systems and years of hands-on experience handling large datasets, documents, and spreadsheets with precision. I take pride in zero-error output, fast turnaround, and strict confidentiality on every project.
+
+I work systematically — understanding requirements fully before I begin, maintaining consistent formatting throughout, and performing a quality check on every deliverable before sending it. Whether you need a database populated, a scanned PDF typed up, or a messy Excel sheet cleaned and structured, I bring the same level of care and professionalism to every task."
+             data-ar="أنا متخصص في إدخال البيانات بخلفية أكاديمية في نظم المعلومات الإدارية وسنوات من الخبرة العملية في التعامل مع مجموعات بيانات ضخمة ومستندات وجداول بيانات بدقة عالية. أفخر بتقديم مخرجات خالية من الأخطاء مع التزام صارم بالسرية التامة في كل مشروع.
+
+أعمل بمنهجية واضحة — أفهم المتطلبات بالكامل قبل البدء، وأحافظ على تنسيق متسق طوال العمل، وأُجري مراجعة شاملة لكل مُخرَج قبل تسليمه.">
+          I am a dedicated Data Entry Specialist with a strong background in Management Information Systems and years of hands-on experience handling large datasets, documents, and spreadsheets with precision. I take pride in zero-error output, fast turnaround, and strict confidentiality on every project.
+
+I work systematically — understanding requirements fully before I begin, maintaining consistent formatting throughout, and performing a quality check on every deliverable before sending it. Whether you need a database populated, a scanned PDF typed up, or a messy Excel sheet cleaned and structured, I bring the same level of care and professionalism to every task.
         </p>
-        <div class="d-flex flex-wrap gap-2 mb-4 fade-up delay-4">
-          <span class="hero-tag active">Web Dev</span>
-          <span class="hero-tag">Data Analysis</span>
-          <span class="hero-tag">Content Writing</span>
-          <span class="hero-tag">App Dev</span>
-          <span class="hero-tag">SEO</span>
-          <span class="hero-tag">Data Entry</span>
-          <span class="hero-tag">Python</span>
-          <span class="hero-tag">Business Analysis</span>
-        </div>
-        <div class="d-flex gap-3 flex-wrap fade-up delay-5">
-          <a href="#projects" class="btn-prim">View Projects</a>
-          <a href="#contact" class="btn-ghost">Get In Touch</a>
+
+        <div class="about-highlights">
+          <div class="highlight-item reveal reveal-delay-1">
+            <span class="highlight-icon" aria-hidden="true">🎯</span>
+            <div>
+              <div class="highlight-text" data-en="Zero-error commitment" data-ar="التزام بالخلو من الأخطاء">Zero-error commitment</div>
+              <div class="highlight-sub" data-en="Every deliverable is quality-checked before sending" data-ar="كل مُخرَج يُراجع قبل التسليم">Every deliverable is quality-checked before sending</div>
+            </div>
+          </div>
+          <div class="highlight-item reveal reveal-delay-2">
+            <span class="highlight-icon" aria-hidden="true">🔒</span>
+            <div>
+              <div class="highlight-text" data-en="Strict confidentiality" data-ar="سرية تامة">Strict confidentiality</div>
+              <div class="highlight-sub" data-en="NDA available. Your data is safe and never shared." data-ar="NDA متاح. بياناتك آمنة ولا تُشارك أبدًا.">NDA available. Your data is safe and never shared.</div>
+            </div>
+          </div>
+          <div class="highlight-item reveal reveal-delay-3">
+            <span class="highlight-icon" aria-hidden="true">⚡</span>
+            <div>
+              <div class="highlight-text" data-en="Fast turnaround" data-ar="تسليم سريع">Fast turnaround</div>
+              <div class="highlight-sub" data-en="Small tasks within 24 hours, larger projects by agreed deadline" data-ar="المهام الصغيرة خلال 24 ساعة، المشاريع الكبيرة بالموعد المتفق عليه">Small tasks within 24 hours, larger projects by agreed deadline</div>
+            </div>
+          </div>
+          <div class="highlight-item reveal reveal-delay-4">
+            <span class="highlight-icon" aria-hidden="true">🌍</span>
+            <div>
+              <div class="highlight-text" data-en="Bilingual: Arabic &amp; English" data-ar="ثنائي اللغة: العربية والإنجليزية">Bilingual: Arabic &amp; English</div>
+              <div class="highlight-sub" data-en="Native Arabic, professional English" data-ar="عربي كلغة أم، إنجليزي احترافي">Native Arabic, professional English</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-lg-5 hero-right">
-        <div></div>
-        <div class="stat-grid">
-          <div class="stat-box">
-            <div class="stat-big">BSc</div>
-            <div class="stat-desc">MIS — Distinction</div>
+
+      <!-- Sidebar cards -->
+      <div class="about-sidebar">
+        <div class="info-card reveal">
+          <div class="info-card-title" data-en="Languages" data-ar="اللغات">Languages</div>
+          <div class="lang-item">
+            <span class="lang-name" data-en="Arabic" data-ar="العربية">Arabic</span>
+            <span class="badge badge-teal" data-en="Native" data-ar="لغة أم">Native</span>
           </div>
-          <div class="stat-box">
-            <div class="stat-big">Dip.</div>
-            <div class="stat-desc">Computer Science</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-big">20+</div>
-            <div class="stat-desc">Projects Done</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-big">6+</div>
-            <div class="stat-desc">Years Experience</div>
+          <div class="lang-item">
+            <span class="lang-name" data-en="English" data-ar="الإنجليزية">English</span>
+            <span class="badge badge-navy" data-en="Professional" data-ar="احترافي">Professional</span>
           </div>
         </div>
-        <div class="scroll-hint">
-          <div class="scroll-line"></div>
-          Scroll to explore
+
+        <div class="info-card reveal reveal-delay-1">
+          <div class="info-card-title" data-en="Availability" data-ar="التوفر">Availability</div>
+          <div class="avail-status">
+            <div class="avail-dot" aria-hidden="true"></div>
+            <span data-en="Available Now" data-ar="متاح الآن">Available Now</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:8px;" data-en="Open to remote &amp; freelance worldwide" data-ar="متاح للعمل عن بُعد والمستقل عالميًا">Open to remote &amp; freelance worldwide</p>
+        </div>
+
+        <div class="info-card reveal reveal-delay-2">
+          <div class="info-card-title" data-en="Education" data-ar="المؤهل الأكاديمي">Education</div>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.7;" data-en="BSc Management Information Systems — Distinction · Faculty of Computers &amp; Information, Egypt (2018–2022)" data-ar="بكالوريوس نظم المعلومات الإدارية — امتياز · كلية الحاسبات والمعلومات، مصر (2018–2022)">
+            BSc Management Information Systems — Distinction · Faculty of Computers &amp; Information, Egypt (2018–2022)
+          </p>
+        </div>
+
+        <div class="info-card reveal reveal-delay-3">
+          <div class="info-card-title" data-en="Work Style" data-ar="أسلوب العمل">Work Style</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="badge badge-teal" data-en="Methodical" data-ar="منهجي">Methodical</span>
+            <span class="badge badge-navy" data-en="Detail-oriented" data-ar="دقيق في التفاصيل">Detail-oriented</span>
+            <span class="badge badge-amber" data-en="Deadline-driven" data-ar="ملتزم بالمواعيد">Deadline-driven</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<div class="sec-wrap" id="education">
+<!-- ══════════════════════════════════════
+     SERVICES PREVIEW
+════════════════════════════════════════ -->
+<section class="section services-bg" id="services-preview" aria-labelledby="services-preview-heading">
   <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">01 /</span>
-      <span class="sec-title">Education</span>
-      <span class="sec-sub">Academic Background</span>
+    <div class="section-header">
+      <div class="section-badge">
+        <span data-en="What I Offer" data-ar="ما أقدمه">What I Offer</span>
+      </div>
+      <h2 id="services-preview-heading" class="section-title">
+        <span data-en="Data Entry &amp; Document" data-ar="إدخال البيانات والمستندات">Data Entry &amp; Document</span>
+        <span class="text-teal" data-en=" Services" data-ar=" الخدمات"> Services</span>
+      </h2>
+      <p class="section-desc">
+        <span data-en="From spreadsheets to databases to transcription — I handle it all with precision." data-ar="من جداول البيانات إلى قواعد البيانات وحتى التفريغ النصي — أتولى كل ذلك بدقة عالية.">
+          From spreadsheets to databases to transcription — I handle it all with precision.
+        </span>
+      </p>
     </div>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <span class="edu-badge badge-red">Distinction ★</span>
-        <span class="edu-icon">🎓</span>
-        <div class="edu-deg">Bachelor of Science</div>
-        <div class="edu-field">Management Information Systems</div>
-        <div class="edu-info">Faculty of Computers & Information · Egypt · 2018–2022</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-badge badge-steel">Very Good</span>
-        <span class="edu-icon">📜</span>
-        <div class="edu-deg">Higher Diploma</div>
-        <div class="edu-field">Computer Science</div>
-        <div class="edu-info">Postgraduate Studies · Egypt · 2022–2023</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-badge badge-gold">Certified</span>
-        <span class="edu-icon">🏅</span>
-        <div class="edu-deg">Professional Certifications</div>
-        <div class="edu-field">Digital Marketing · SEO · Python</div>
-        <div class="edu-info">Google · Coursera · HubSpot · 2021–2024</div>
-      </div>
+
+    <!-- Service tags preview -->
+    <div id="hero-services-preview" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:40px;"></div>
+
+    <div style="text-align:center;">
+      <a href="services.html" class="btn btn-primary" data-en="See All Services" data-ar="جميع الخدمات">See All Services →</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- EXPERIENCE -->
-<div class="sec-wrap bg-cream" id="experience">
+<!-- ══════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════ -->
+<section class="section-sm" style="background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);" aria-labelledby="cta-heading">
+  <div class="container" style="text-align:center;">
+    <h2 id="cta-heading" style="color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:12px;">
+      <span data-en="Ready to get started?" data-ar="هل أنت مستعد للبدء؟">Ready to get started?</span>
+    </h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:28px;font-size:1rem;">
+      <span data-en="Send me your project details and get a free quote within 24 hours." data-ar="أرسل لي تفاصيل مشروعك واحصل على عرض سعر مجاني خلال 24 ساعة.">
+        Send me your project details and get a free quote within 24 hours.
+      </span>
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-navy" data-en="Contact Me Now" data-ar="تواصل معي الآن">Contact Me Now</a>
+      <a href="portfolio.html" class="btn" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4);" data-en="View My Work" data-ar="اطلع على أعمالي">View My Work</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════════════════════════
+     FOOTER (shared across all pages)
+════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
   <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">02 /</span>
-      <span class="sec-title">Experience</span>
-      <span class="sec-sub">Work History</span>
-    </div>
-    <div class="exp-list">
-      <div class="exp-row">
-        <div class="row align-items-start">
-          <div class="col-md-3">
-            <div class="exp-period">2023 — Present</div>
-          </div>
-          <div class="col-md-9">
-            <div class="exp-role">Senior Web Developer & SEO Specialist</div>
-            <div class="exp-company">Freelance — International Clients (KSA, UAE, Egypt)</div>
-            <div class="exp-desc">Designed, developed and launched 15+ business websites for clients in Saudi Arabia and the UAE. Managed end-to-end projects from requirements gathering to deployment — including ElMosbah.com, a fully SEO-optimized plumbing business website ranking on page 1 in Saudi Arabia. Delivered ongoing content strategy and technical SEO audits.</div>
-            <div class="exp-tags">
-              <span class="exp-tag">HTML/CSS/JS</span><span class="exp-tag">SEO</span><span class="exp-tag">WordPress</span><span class="exp-tag">Google Search Console</span><span class="exp-tag">Client Management</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="exp-row">
-        <div class="row align-items-start">
-          <div class="col-md-3">
-            <div class="exp-period">2022 — 2024</div>
-          </div>
-          <div class="col-md-9">
-            <div class="exp-role">Data Analyst & Automation Engineer</div>
-            <div class="exp-company">Tech Startup — Cairo, Egypt</div>
-            <div class="exp-desc">Built Python-based data entry automation pipelines reducing manual workload by 80%. Designed structured Excel dashboards and reporting systems for business intelligence. Conducted data cleaning, transformation, and visualization using Pandas and Matplotlib for quarterly business reporting.</div>
-            <div class="exp-tags">
-              <span class="exp-tag">Python</span><span class="exp-tag">Pandas</span><span class="exp-tag">Excel</span><span class="exp-tag">Data Visualization</span><span class="exp-tag">Automation</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="exp-row">
-        <div class="row align-items-start">
-          <div class="col-md-3">
-            <div class="exp-period">2021 — 2023</div>
-          </div>
-          <div class="col-md-9">
-            <div class="exp-role">Arabic & English Content Strategist</div>
-            <div class="exp-company">Digital Agency — Remote</div>
-            <div class="exp-desc">Produced 100+ SEO-optimized articles, landing pages, and product descriptions in Arabic and English for service businesses across MENA. Developed content calendars, keyword research strategies, and editorial guidelines. Improved organic traffic for clients by an average of 65% within 6 months.</div>
-            <div class="exp-tags">
-              <span class="exp-tag">Copywriting</span><span class="exp-tag">SEO Writing</span><span class="exp-tag">Arabic/EN</span><span class="exp-tag">Keyword Research</span><span class="exp-tag">Content Strategy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="exp-row">
-        <div class="row align-items-start">
-          <div class="col-md-3">
-            <div class="exp-period">2020 — 2022</div>
-          </div>
-          <div class="col-md-9">
-            <div class="exp-role">Business Systems Analyst</div>
-            <div class="exp-company">Faculty Research Project · Egypt</div>
-            <div class="exp-desc">Led academic and applied research in Management Information Systems — analyzing ERP implementations, database architectures, and digital transformation strategies. Authored thesis on AI integration in SME workflows. Mentored junior students in systems analysis and design methodologies.</div>
-            <div class="exp-tags">
-              <span class="exp-tag">Systems Analysis</span><span class="exp-tag">ERP</span><span class="exp-tag">Database Design</span><span class="exp-tag">UML</span><span class="exp-tag">Research</span>
-            </div>
-          </div>
-        </div>
+    <div class="footer-inner">
+      <div class="footer-logo">M<span>.</span>ABU EL-ATA</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html"      data-en="Home"       data-ar="الرئيسية">Home</a>
+        <a href="services.html"   data-en="Services"   data-ar="الخدمات">Services</a>
+        <a href="experience.html" data-en="Experience"  data-ar="الخبرة">Experience</a>
+        <a href="portfolio.html"  data-en="Portfolio"  data-ar="أعمالي">Portfolio</a>
+        <a href="contact.html"    data-en="Contact"    data-ar="تواصل">Contact</a>
+      </nav>
+      <div class="footer-copy">
+        <span data-en="Data Entry Specialist · Egypt" data-ar="متخصص إدخال البيانات · مصر">Data Entry Specialist · Egypt</span>
+        &nbsp;·&nbsp;<span>© <span id="footer-year">2025</span></span>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<div class="sec-wrap" id="skills">
-  <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">03 /</span>
-      <span class="sec-title">Skills</span>
-      <span class="sec-sub">Technical Expertise</span>
-    </div>
-    <div class="row g-5">
-      <div class="col-md-6">
-        <div class="skill-group-title">Development</div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Web Development (HTML/CSS/JS)</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Python & Automation</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" style="width:82%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Database Design & SQL</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">App Development</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">React / Bootstrap / Tailwind</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" style="width:78%"></div></div></div>
-      </div>
-      <div class="col-md-6">
-        <div class="skill-group-title">Content & Analysis</div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Data Entry & Automation</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Content Writing (AR/EN)</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" style="width:92%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">SEO & Digital Marketing</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Data Analysis & Visualization</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Business Analysis & Reporting</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div></div>
-      </div>
-      <div class="col-md-6">
-        <div class="skill-group-title">Productivity & Tools</div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">MS Office & Advanced Excel</span><span class="skill-pct">93%</span></div><div class="skill-track"><div class="skill-fill" style="width:93%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Project Management</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Git & Version Control</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
-      </div>
-      <div class="col-md-6">
-        <div class="skill-group-title">Soft Skills</div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Critical Thinking & Analysis</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" style="width:92%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Arabic & English Communication</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div></div>
-        <div class="skill-item"><div class="skill-meta"><span class="skill-label">Client Relations & Delivery</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<div class="sec-wrap bg-cream" id="projects">
-  <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">04 /</span>
-      <span class="sec-title">Projects</span>
-      <span class="sec-sub">Selected Work</span>
-    </div>
-    <div class="projects-list">
-      <a href="https://elmosbah.com" target="_blank" class="project-row">
-        <span class="project-num">001</span>
-        <div>
-          <div class="project-name">ElMosbah — Business Website</div>
-          <div class="project-desc">Full SEO-optimized website for a plumbing company in Saudi Arabia. Mobile-first, fast-loading, with structured service pages and local SEO — ranking on page 1.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip live">Live ↗</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">SEO</span><span class="chip">Local SEO</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-      <a href="https://cmody.vercel.app/#home" target="_blank" class="project-row">
-        <span class="project-num">002</span>
-        <div>
-          <div class="project-name">Cmody — Multi-Page Web Platform</div>
-          <div class="project-desc">A full-featured, multi-page web platform deployed on Vercel. Showcases advanced frontend architecture, smooth navigation, and polished UI across multiple product sections — built for performance and scalability.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip live">Live ↗</span><span class="chip new">Vercel</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">UI/UX</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-      <a href="https://cmody.onrender.com/coffeNew.html" target="_blank" class="project-row">
-        <span class="project-num">003</span>
-        <div>
-          <div class="project-name">Coffee Shop — Premium Web App</div>
-          <div class="project-desc">A beautifully designed, fully responsive coffee shop website with animated UI, product catalog, and modern customer experience — demonstrating advanced frontend craftsmanship.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip live">Live ↗</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">UI/UX</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-      <div class="project-row">
-        <span class="project-num">004</span>
-        <div>
-          <div class="project-name">Data Entry Automation Tool</div>
-          <div class="project-desc">Python script automating bulk data input and validation — reduces manual effort by 80% with error-checking, duplicate detection, and Excel reporting output.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Excel</span><span class="chip">Automation</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </div>
-      <div class="project-row">
-        <span class="project-num">005</span>
-        <div>
-          <div class="project-name">Arabic SEO Content Portfolio</div>
-          <div class="project-desc">100+ SEO-optimized articles and landing page copy in Arabic and English for service businesses across MENA, achieving avg. 65% organic traffic growth.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip">Copywriting</span><span class="chip">SEO</span><span class="chip">Arabic/EN</span><span class="chip">Strategy</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </div>
-      <div class="project-row">
-        <span class="project-num">006</span>
-        <div>
-          <div class="project-name">Business Intelligence Dashboard</div>
-          <div class="project-desc">Interactive Excel-based BI dashboard for sales reporting and KPI tracking — used by a retail company to monitor performance across 5 branches.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip">Excel</span><span class="chip">Power Query</span><span class="chip">BI</span><span class="chip">Data Viz</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </div>
-      <a href="https://github.com/mustafaatta20012" target="_blank" class="project-row">
-        <span class="project-num">007</span>
-        <div>
-          <div class="project-name">GitHub Open Source Projects</div>
-          <div class="project-desc">Front-end components, landing page templates, and utility scripts — publicly available on GitHub for the developer community.</div>
-          <div class="d-flex gap-1 flex-wrap mt-2"><span class="chip live">GitHub ↗</span><span class="chip">JavaScript</span><span class="chip">CSS</span><span class="chip">Open Source</span></div>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- PLATFORMS -->
-<div class="sec-wrap" id="platforms">
-  <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">05 /</span>
-      <span class="sec-title">Find Me On</span>
-      <span class="sec-sub">Platforms & Networks</span>
-    </div>
-    <div class="platforms-grid">
-      <a href="https://www.linkedin.com/in/mustafa-atta-mis/" target="_blank" class="platform-item linkedin-item">
-        <span class="platform-emoji">💼</span>
-        <span class="platform-name">LinkedIn</span>
-        <span class="platform-handle">mustafa-atta-mis</span>
-        <span class="platform-tag">Professional ✓</span>
-      </a>
-      <a href="https://www.fiverr.com/mustafa_atta1" target="_blank" class="platform-item">
-        <span class="platform-emoji">🟢</span>
-        <span class="platform-name">Fiverr</span>
-        <span class="platform-handle">@mustafa_atta1</span>
-        <span class="platform-tag">Active</span>
-      </a>
-      <a href="https://www.upwork.com" target="_blank" class="platform-item">
-        <span class="platform-emoji">🔵</span>
-        <span class="platform-name">Upwork</span>
-        <span class="platform-handle">Mustafa Abu El-Ata</span>
-        <span class="platform-tag">Active</span>
-      </a>
-      <a href="https://www.freelancer.com" target="_blank" class="platform-item">
-        <span class="platform-emoji">🟡</span>
-        <span class="platform-name">Freelancer</span>
-        <span class="platform-handle">Mustafa A.</span>
-        <span class="platform-tag">Active</span>
-      </a>
-      <a href="https://khamsat.com/user/mustafa20222atta" target="_blank" class="platform-item">
-        <span class="platform-emoji">🟠</span>
-        <span class="platform-name">خمسات</span>
-        <span class="platform-handle">mustafa20222atta</span>
-        <span class="platform-tag">Active</span>
-      </a>
-      <a href="https://mostaql.com/u/Mustafa20222" target="_blank" class="platform-item">
-        <span class="platform-emoji">🔷</span>
-        <span class="platform-name">مستقل</span>
-        <span class="platform-handle">Mustafa20222</span>
-        <span class="platform-tag">Verified ✓</span>
-      </a>
-      <a href="https://github.com/mustafaatta20012" target="_blank" class="platform-item">
-        <span class="platform-emoji">⚫</span>
-        <span class="platform-name">GitHub</span>
-        <span class="platform-handle">mustafaatta20012</span>
-        <span class="platform-tag">Public Repos</span>
-      </a>
-      <a href="https://cmody.vercel.app/#home" target="_blank" class="platform-item">
-        <span class="platform-emoji">▲</span>
-        <span class="platform-name">Vercel</span>
-        <span class="platform-handle">cmody.vercel.app</span>
-        <span class="platform-tag">Deployed ✓</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div class="sec-wrap p-0" id="contact" style="padding:0!important">
-  <div class="row g-0" style="border-top:1px solid var(--border)">
-    <div class="col-lg-5 contact-left">
-      <h2>Let's<br>Work<br><span>Together.</span></h2>
-      <p>Looking for a reliable web developer, data analyst, content strategist, or SEO specialist? I deliver quality work on time — every single time.</p>
-      <div class="avail-badge"><span class="avail-dot"></span> Available for freelance work</div>
-    </div>
-    <div class="col-lg-7 contact-right">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="contact-field">
-            <div class="contact-key">// Phone & WhatsApp</div>
-            <div class="contact-val"><a href="tel:+201101587881">+20 110 158 7881</a></div>
-          </div>
-          <div class="contact-field">
-            <div class="contact-key">// LinkedIn</div>
-            <div class="contact-val"><a href="https://www.linkedin.com/in/mustafa-atta-mis/" target="_blank">mustafa-atta-mis ↗</a></div>
-          </div>
-          <div class="contact-field">
-            <div class="contact-key">// Live Website</div>
-            <div class="contact-val"><a href="https://elmosbah.com" target="_blank">elmosbah.com ↗</a></div>
-          </div>
-          <div class="contact-field" style="border:none">
-            <div class="contact-key">// Web Platform</div>
-            <div class="contact-val"><a href="https://cmody.vercel.app/#home" target="_blank">cmody.vercel.app ↗</a></div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="contact-field">
-            <div class="contact-key">// Location</div>
-            <div class="contact-val">Egypt 🇪🇬</div>
-          </div>
-          <div class="contact-field">
-            <div class="contact-key">// GitHub</div>
-            <div class="contact-val"><a href="https://github.com/mustafaatta20012" target="_blank">mustafaatta20012 ↗</a></div>
-          </div>
-          <div class="contact-field">
-            <div class="contact-key">// Coffee Shop Demo</div>
-            <div class="contact-val"><a href="https://cmody.onrender.com/coffeNew.html" target="_blank">cmody.onrender.com ↗</a></div>
-          </div>
-          <div class="contact-field" style="border:none">
-            <div class="contact-key">// Availability</div>
-            <div class="contact-val" style="color:#27ae60;font-weight:700">Open to Remote & Freelance</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-    <span>Mustafa Abu El-Ata</span>
-    <div class="footer-socials d-flex gap-3 flex-wrap">
-      <a href="https://www.linkedin.com/in/mustafa-atta-mis/" target="_blank">LinkedIn</a>
-      <span style="color:#333">·</span>
-      <a href="https://github.com/mustafaatta20012" target="_blank">GitHub</a>
-      <span style="color:#333">·</span>
-      <a href="https://cmody.vercel.app/#home" target="_blank">Vercel</a>
-      <span style="color:#333">·</span>
-      <a href="https://www.fiverr.com/mustafa_atta1" target="_blank">Fiverr</a>
-    </div>
-    <span>BSc MIS <span class="accent">·</span> Distinction <span class="accent">·</span> © 2025</span>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-// Cursor
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX - 5 + 'px';
-  cursor.style.top = e.clientY - 5 + 'px';
-  ring.style.left = e.clientX - 18 + 'px';
-  ring.style.top = e.clientY - 18 + 'px';
-});
-document.querySelectorAll('a,button,.project-row,.platform-item,.edu-card,.exp-row').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; ring.style.transform = 'scale(1.5)'; });
-  el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'scale(1)'; });
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.exp-row, .project-row, .edu-card, .stat-box, .platform-item').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
-</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
