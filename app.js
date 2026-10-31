@@ -428,6 +428,11 @@ function renderSamples(container, filterCat = 'all') {
   const { samples } = PORTFOLIO_DATA;
   const filtered = filterCat === 'all' ? samples : samples.filter(s => s.category === filterCat);
 
+  if (!filtered.length) {
+    container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px;" data-en="No samples in this category yet." data-ar="لا توجد نماذج في هذه الفئة بعد.">No samples in this category yet.</p>';
+    return;
+  }
+
   const catLabels = {
     'excel': 'Excel', 'presentations': 'Presentations',
     'documents': 'Documents', 'data-cleaning': 'Data Cleaning',
@@ -436,42 +441,56 @@ function renderSamples(container, filterCat = 'all') {
     'excel': 'badge-teal', 'presentations': 'badge-amber',
     'documents': 'badge-navy', 'data-cleaning': 'badge-success',
   };
+  const catEmoji = {
+    'excel': '📊', 'presentations': '📽️', 'data-cleaning': '🧹', 'documents': '📄',
+  };
 
   container.innerHTML = filtered.map((s, i) => {
-    const hasImage = s.image && !s.image.includes('[ADD:');
-    const hasLink  = s.link  && !s.link.includes('[ADD:');
+    const hasImage  = s.image    && !s.image.includes('[ADD:');
+    const hasLink   = s.link     && !s.link.includes('[ADD:');
+    const hasBefore = s.linkBefore && !s.linkBefore.includes('[ADD:');
+    const catLabel  = catLabels[s.category] || s.category;
+    const catColor  = catColors[s.category] || 'badge-teal';
+    const emoji     = catEmoji[s.category]  || '📄';
+
     return `
-    <div class="sample-card ${s.featured ? 'featured' : ''} reveal reveal-delay-${(i % 3) + 1}" data-category="${s.category}">
-      ${s.featured ? `<div class="sample-featured-badge" data-en="Featured" data-ar="مميز">Featured</div>` : ''}
-      <div class="sample-img" aria-label="${s.titleEn}">
-        ${hasImage ? `<img src="${s.image}" alt="${s.titleEn}" loading="lazy">` : `<span aria-hidden="true">${s.category === 'excel' ? '📊' : s.category === 'presentations' ? '📽️' : s.category === 'data-cleaning' ? '🧹' : '📄'}</span>`}
+    <div class="sample-card ${s.featured ? 'featured' : ''} reveal" data-category="${s.category}" style="animation-delay:${i * 0.1}s">
+      ${s.featured ? `<div class="sample-featured-badge" data-en="Featured" data-ar="مميز">⭐ Featured</div>` : ''}
+
+      <!-- Card image / icon -->
+      <div class="sample-img">
+        ${hasImage
+          ? `<img src="${s.image}" alt="${escHtml(s.titleEn)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+             <span class="sample-img-fallback" aria-hidden="true" style="display:none;">${emoji}</span>`
+          : `<span class="sample-img-fallback" aria-hidden="true">${emoji}</span>`
+        }
       </div>
+
+      <!-- Card body -->
       <div class="sample-body">
-        <span class="sample-cat badge ${catColors[s.category] || 'badge-teal'}">
-          ${catLabels[s.category] || s.category}
-        </span>
+        <span class="sample-cat badge ${catColor}" data-en="${catLabel}" data-ar="${catLabel}">${catLabel}</span>
+
         <div class="sample-title">
           <span data-en="${escHtml(s.titleEn)}" data-ar="${escHtml(s.titleAr)}">${escHtml(s.titleEn)}</span>
         </div>
         <p class="sample-desc">
           <span data-en="${escHtml(s.descEn)}" data-ar="${escHtml(s.descAr)}">${escHtml(s.descEn)}</span>
         </p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+
+        <!-- Action buttons -->
+        <div class="sample-actions">
           ${hasLink ? `
-          <a href="${s.link}" target="_blank" rel="noopener" class="sample-link">
-            <span data-en="⬇ Download Result" data-ar="⬇ تحميل النتيجة">⬇ Download Result</span>
-          </a>` : `
-          <span class="sample-link" style="opacity:.4;cursor:default;">
-            <span data-en="[Add sample link]" data-ar="[أضف رابط النموذج]">[Add sample link]</span>
-          </span>`}
-          ${s.linkBefore ? `
-          <a href="${s.linkBefore}" target="_blank" rel="noopener" class="sample-link-before">
-            <span data-en="📄 View Source (Before)" data-ar="📄 المصدر (قبل)">📄 View Source (Before)</span>
-          </a>` : ''}
+            <a href="${s.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm sample-btn-main"
+               data-en="⬇ Open / Download" data-ar="⬇ فتح / تحميل">⬇ Open / Download</a>
+          ` : ''}
+          ${hasBefore ? `
+            <a href="${s.linkBefore}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm sample-btn-before"
+               data-en="📄 Before (Source)" data-ar="📄 المصدر (قبل)">📄 Before (Source)</a>
+          ` : ''}
         </div>
       </div>
-    </div>
-  `}).join('');
+    </div>`;
+  }).join('');
 }
 
 function renderTestimonials(container) {

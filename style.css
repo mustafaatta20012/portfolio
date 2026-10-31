@@ -1538,3 +1538,33 @@ a:hover { color: var(--teal-light); }
   padding: 4px 0;
 }
 .sample-link-before:hover { color: var(--amber-light); text-decoration: underline; }
+
+/* ── SAMPLE ACTIONS (portfolio cards) ─────────────────────── */
+.sample-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.sample-img-fallback {
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.sample-btn-main {
+  font-size: 0.82rem !important;
+  padding: 8px 14px !important;
+}
+.sample-btn-before {
+  font-size: 0.82rem !important;
+  padding: 8px 14px !important;
+  color: var(--amber) !important;
+  border-color: var(--amber) !important;
+}
+.sample-btn-before:hover {
+  background: var(--amber) !important;
+  color: #fff !important;
+}
