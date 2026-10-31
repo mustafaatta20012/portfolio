@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    APP.JS — Shared script for all pages
    Plain vanilla JS, no build step, GitHub Pages compatible
    ============================================================ */
@@ -424,13 +424,19 @@ function renderSamples(container, filterCat = 'all') {
         <p class="sample-desc">
           <span data-en="${escHtml(s.descEn)}" data-ar="${escHtml(s.descAr)}">${escHtml(s.descEn)}</span>
         </p>
-        ${hasLink ? `
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          ${hasLink ? `
           <a href="${s.link}" target="_blank" rel="noopener" class="sample-link">
-            <span data-en="View Sample" data-ar="عرض النموذج">View Sample</span> →
+            <span data-en="⬇ Download Result" data-ar="⬇ تحميل النتيجة">⬇ Download Result</span>
           </a>` : `
           <span class="sample-link" style="opacity:.4;cursor:default;">
             <span data-en="[Add sample link]" data-ar="[أضف رابط النموذج]">[Add sample link]</span>
           </span>`}
+          ${s.linkBefore ? `
+          <a href="${s.linkBefore}" target="_blank" rel="noopener" class="sample-link-before">
+            <span data-en="📄 View Source (Before)" data-ar="📄 المصدر (قبل)">📄 View Source (Before)</span>
+          </a>` : ''}
+        </div>
       </div>
     </div>
   `}).join('');

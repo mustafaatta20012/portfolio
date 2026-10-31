@@ -1463,3 +1463,16 @@ a:hover { color: var(--teal-light); }
 [data-theme="dark"] .badge-amber   { background: rgba(245,158,11,.18); }
 [data-theme="dark"] .badge-success { background: rgba(34,197,94,.15); }
 [data-theme="dark"] .badge-teal    { background: rgba(13,148,136,.2); }
+
+/* -- SAMPLE BEFORE LINK --------------------------------------- */
+.sample-link-before {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--amber);
+  text-decoration: none;
+  padding: 4px 0;
+}
+.sample-link-before:hover { color: var(--amber-light); text-decoration: underline; }
