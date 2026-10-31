@@ -111,16 +111,22 @@ function initNavbar() {
 
 /* ── SCROLL REVEAL ─────────────────────────────────────────── */
 function initReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '80px 0px 0px 0px' });
 
-  $$('.reveal').forEach(el => observer.observe(el));
+  $('.reveal').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight + 120) {
+      el.classList.add('visible');
+    } else {
+      obs.observe(el);
+    }
+  });
+  // Safety: force all remaining .reveal visible after 700ms
+  setTimeout(() => $('.reveal:not(.visible)').forEach(el => el.classList.add('visible')), 700);
 }
 
 /* ── ANIMATED COUNTERS ─────────────────────────────────────── */
@@ -634,16 +640,19 @@ function initPage() {
     renderSkills($('#skills-grid'));
     renderTools($('#tools-grid'));
     renderProcess($('#process-steps'));
+    initReveal();
     initSkillBars();
   }
   if (page === 'experience.html') {
     renderExperience($('#timeline'));
     renderCourses($('#courses-grid'));
+    initReveal();
     initFilter('course-filter-btn', 'course-card', 'all');
   }
   if (page === 'portfolio.html') {
     renderSamples($('#samples-grid'));
     renderTestimonials($('#testimonials-grid'));
+    initReveal();
     initFilter('sample-filter-btn', 'sample-card', 'all');
   }
   if (page === 'contact.html') {
